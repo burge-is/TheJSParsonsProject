@@ -30,9 +30,9 @@ function startApp() {
 */
 function loadPenPieces() {
   //Clear existing changes
-  document
-    .querySelectorAll(".editor-input")
-    .forEach(zone => (zone.innerHTML = ""));
+  // document
+  //   .querySelectorAll(".editor-input")
+  //   .forEach(zone => (zone.innerHTML = ""));
   document.getElementById("piece-holder").innerHTML = "";
   // Notify user of loading
   const loading = buildDraggable("loading...");
