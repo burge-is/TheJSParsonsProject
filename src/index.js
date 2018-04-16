@@ -43,20 +43,21 @@ function loadPenPieces() {
 
   Promise.all([html, css, js]).then(function(responses) {
     document.getElementById("piece-holder").innerHTML = "";
-    responses
-      // Flatten the js, html, and css into a single array
-      // of text based on \n in each of the returned files
-      .reduce(function(arr, resp) {
-        return arr.concat(
-          resp.split("\n").filter(function(line) {
-            return line.trim() !== "";
-          })
-        );
-      }, [])
-      //build a draggable html element from each of these lines
-      .map(buildDraggable)
+    shuffle(
+      responses
+        // Flatten the js, html, and css into a single array
+        // of text based on \n in each of the returned files
+        .reduce(function(arr, resp) {
+          return arr.concat(
+            resp.split("\n").filter(function(line) {
+              return line.trim() !== "";
+            })
+          );
+        }, [])
+        //build a draggable html element from each of these lines
+        .map(buildDraggable)
       //lastly add these lines to the puzzle piece holder
-      .map(a => document.getElementById("piece-holder").appendChild(a));
+    ).map(a => document.getElementById("piece-holder").appendChild(a));
 
     // Get the puzzle piece holder height
     const pieceHolderSize = document.getElementById("piece-holder")
@@ -72,6 +73,21 @@ function loadPenPieces() {
       "&default-tab=result";
   });
 }
+
+// Fisher-Yates Shuffle
+// https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm
+// https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+function shuffle(a) {
+  var j, x, i;
+  for (i = a.length - 1; i > 0; i--) {
+    j = Math.floor(Math.random() * (i + 1));
+    x = a[i];
+    a[i] = a[j];
+    a[j] = x;
+  }
+  return a;
+}
+
 /*
 *  Create a draggable HTMLElement out of text
 */
