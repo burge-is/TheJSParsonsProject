@@ -79,13 +79,15 @@ body {
   display: block;
 }
 #editor-form .editor-input {
-  width: 100% !important;
   min-height: 200px !important;
   border-radius: 10px;
   padding: 5px;
+  display: flex;
+  flex-direction: column;
 }
 #editor-form .editor-input .puzzle-piece {
   margin: 0px;
+  margin-right: auto;
 }
 
 .cardboard {
@@ -161,6 +163,7 @@ body {
 #css-editor {
   background-color: yellow;
 }
+
 button {
   color: white;
   background: black;
