@@ -25,27 +25,27 @@
 		<button id="piece-answer-swapper">FLIP</button>
 		<label for="piece-answer-swapper">click the flip button to see the desired end result</label>
 		<div id="piece-holder-container">			
-			<div id="piece-holder" class="cardboard cutout"></div>
+			<div id="piece-holder" class="cardboard cutout dropZone"></div>
 			<iframe id="box-cover"></iframe>
 		</div>
 	</div>
 	<form id="editor-form">
 		<div>
 			<label for="html">html</label>
-			<textarea class="editor-input cardboard popout" name="html" id="html-editor"></textarea>
+			<div class="editor-input cardboard popout dropZone" name="html" id="html-editor" draggable="true"></div>
 		</div>
 		<div>
 			<label for="css">css</label>
-			<textarea class="editor-input cardboard popout" name="css" id="css-editor"></textarea>
+			<div class="editor-input cardboard popout dropZone" name="css" id="css-editor" draggable="true"></div>
 		</div>
 		<div>
 			<label for="js">js</label>
-			<textarea disabled class="editor-input cardboard popout" name="js" id="js-editor"></textarea>
+			<div disabled class="editor-input cardboard popout dropZone" name="js" id="js-editor" draggable="true"></div>
 	</div>
 	</form>
 	<div id="output-container">
 		<div class="tv"></div>
-		<iframe></iframe>
+		<iframe id="editor-output"></iframe>
 	</div>
 </div>
 </body>

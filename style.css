@@ -81,10 +81,14 @@ body {
   font-size: 24px;
   display: block;
 }
-#editor-form textarea {
+#editor-form .editor-input {
   width: 100% !important;
   min-height: 200px !important;
   border-radius: 10px;
+  padding: 5px;
+}
+#editor-form .editor-input .puzzle-piece {
+  margin: 0px;
 }
 
 .cardboard {
