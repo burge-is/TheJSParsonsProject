@@ -1,4 +1,5 @@
 startApp();
+
 /*
 * Bootstrap the app: 
 * here we tie in the starter event handlers
@@ -7,8 +8,6 @@ startApp();
 function startApp() {
   const loadPenButton = document.getElementById("load-pen-button");
   loadPenButton.onclick = loadPenPieces;
-
-  prepareDragEvents();
 
   // Update result iframe when the html/css/js areas change
   document.getElementById("editor-form").oninput = function() {
@@ -97,7 +96,7 @@ function loadPenPieces() {
     document.getElementById("box-cover").src =
       codepenURL.replace("/pen/", "/embed/") +
       "/?height=" +
-      (pieceHolderSize < 800 ? pieceHolderSize : 800) +
+      (pieceHolderSize < 800 ? pieceHolderSize - 5 : 800) +
       "&default-tab=result";
   });
 }
@@ -109,13 +108,52 @@ function buildDraggable(text) {
   draggable.draggable = true;
   draggable.innerText = text;
   draggable.className = "puzzle-piece";
+  prepareDragEvents(draggable, closureDND);
 
   return draggable;
 }
+
+//Creating a global... not happy about it
+let dnd = dragAndDrop();
 /*
 * Handle puzzle drag events
 */
-function prepareDragEvents() {}
+function prepareDragEvents(draggable) {
+  function handleDragOver(e) {
+    if (e.preventDefault) {
+      e.preventDefault(); // Necessary. Allows us to drop.
+    }
+    e.dataTransfer.dropEffect = "move"; // Shows "move" visualization icon
+    return false;
+  }
+
+  draggable.addEventListener("dragstart", dnd.drag, false);
+  draggable.addEventListener("dragover", handleDragOver, false);
+  draggable.addEventListener("drop", dnd.drop, false);
+
+  return false;
+}
+function dragAndDrop() {
+  var dragSrcEl = null;
+  return {
+    drag: function handleDragStart(e) {
+      console.log("dragStart");
+      dragSrcEl = this;
+      e.dataTransfer.effectAllowed = "move";
+      e.dataTransfer.setData("text/html", this.innerHTML);
+    },
+    drop: function handleDrop(e) {
+      if (e.stopPropagation) {
+        e.stopPropagation(); // Stops some browsers from redirecting.
+      }
+      if (dragSrcEl != this) {
+        // Set the source column's HTML to the HTML of the column we dropped on.
+        dragSrcEl.innerHTML = this.innerHTML;
+        this.innerHTML = e.dataTransfer.getData("text/html");
+      }
+    }
+  };
+}
 
 /*
 * Old school xhr get
