@@ -1,0 +1,152 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Patrick Hand SC", cursive;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  background-color: #337edb;
+  background-image: url("https://www.transparenttextures.com/patterns/cardboard.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+#box-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+  background-color: white;
+  z-index: 2;
+}
+#codepen-load-form {
+  font-size: 24px;
+}
+#piece-answer-swapper {
+  z-index: 2;
+}
+#piece-holder-container {
+  position: relative;
+  overflow: hidden;
+}
+#piece-holder {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 200px;
+  border: 2px solid white;
+  background-color: white;
+  padding: 10px;
+}
+#codepen-load-form {
+  position: relative;
+}
+#codepen-load-form * {
+  display: inline;
+}
+#codepen-load-form .button {
+  cursor: pointer;
+}
+#codepen-load-form input {
+  height: 100%;
+  width: 300px;
+}
+#editor-form {
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+#editor-form div {
+  flex-basis: 30%;
+}
+#editor-form label {
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 24px;
+  display: block;
+}
+#editor-form textarea {
+  width: 100% !important;
+  min-height: 200px !important;
+  border-radius: 10px;
+}
+
+.cardboard {
+  background-image: url("https://www.transparenttextures.com/patterns/cardboard.png");
+}
+.cutout {
+  box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
+    1px 1px 5px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 7px 7px 7px 0 rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 7px 7px 7px 0 rgba(0, 0, 0, 0.5) inset;
+}
+.popout {
+  box-shadow: 3px 3px 10px 5px #000, 0 0 4px rgba(0, 0, 0, 0.5) inset;
+}
+
+#output-container {
+  margin-top: 25px;
+  min-height: 400px;
+  min-width: 100%;
+  position: relative;
+}
+#output-container iframe {
+  background-color: white;
+  min-height: 400px;
+  min-width: 100%;
+  max-width: 100%;
+  border-radius: 30px;
+  padding: 40px;
+}
+
+.tv {
+  position: absolute;
+  background-color: transparent;
+  border-radius: 2rem;
+  border: 1rem solid;
+  border-bottom-color: #121212;
+  border-left-color: #080808;
+  border-right-color: #080808;
+  border-top-color: #020202;
+  box-shadow: inset 0 0 8rem black, inset 0 0 3rem black;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.puzzle-piece {
+  margin-left: 5px;
+  align-self: center;
+  background: transparent;
+  transition: all 0.5s ease;
+  color: #41403e;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  outline: none;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: solid 2px #41403e;
+  background-color: white;
+  box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, 0.3);
+}
+.puzzle-piece:hover {
+  box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, 0.2);
+  transform: scale(1.2);
+  z-index: 2;
+}
+
+#js-editor {
+  background-color: purple;
+}
+#html-editor {
+  background-color: brown;
+}
+#css-editor {
+  background-color: yellow;
+}

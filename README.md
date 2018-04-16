@@ -1,2 +1,0 @@
-# TheJSParsonsProject
-Created with CodeSandbox

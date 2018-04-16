@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>The JS Parsons Project</title>
+	<link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script src="src/index.js"></script>
+</head>
+
+<body>
+	<h1>Welcome to The JS Parsons Project - Prototype</h1>
+	<div>
+		<div id="codepen-load-form">
+			<label for="codepen-url">Enter a codepen URL to load the puzzle:</label>
+			<input type="text" name="codepen-url" id="codepen-url" placeholder="https://codepen.io/<user>/pen/<pen>">
+			<button id="load-pen-button" class="button">✅</button>
+			<br/>
+			<p style="">or leave it blank and click load to get a demo puzzle</p>
+		</div>
+		<button id="piece-answer-swapper">FLIP</button>
+		<label for="piece-answer-swapper">click the flip button to see the desired end result</label>
+		<div id="piece-holder-container">			
+			<div id="piece-holder" class="cardboard cutout"></div>
+			<iframe id="box-cover"></iframe>
+		</div>
+	</div>
+	<form id="editor-form">
+		<div>
+			<label for="html">html</label>
+			<textarea class="editor-input cardboard popout" name="html" id="html-editor"></textarea>
+		</div>
+		<div>
+			<label for="css">css</label>
+			<textarea class="editor-input cardboard popout" name="css" id="css-editor"></textarea>
+		</div>
+		<div>
+			<label for="js">js</label>
+			<textarea disabled class="editor-input cardboard popout" name="js" id="js-editor"></textarea>
+	</div>
+	</form>
+	<div id="output-container">
+		<div class="tv"></div>
+		<iframe></iframe>
+	</div>
+</div>
+</body>
+
+</html>
