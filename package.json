@@ -1,7 +1,8 @@
 {
   "name": "the-js-parsons-project",
   "version": "1.0.0",
-  "description": "",
+  "description":
+    "Creating javascript parsons problems from existing codepens. Kind of like making codepens into jigsaw puzzles. ",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",

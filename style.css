@@ -27,9 +27,7 @@ body {
 #box-cover iframe {
   height: 100% !important;
 }
-#codepen-load-form {
-  font-size: 24px;
-}
+
 #piece-answer-swapper {
   z-index: 2;
 }
@@ -45,9 +43,8 @@ body {
   background-color: white;
   padding: 10px;
 }
-
 #codepen-load-form {
-  position: relative;
+  font-size: 24px;
 }
 #codepen-load-form * {
   display: inline;
@@ -164,7 +161,24 @@ body {
 #css-editor {
   background-color: yellow;
 }
-
+button {
+  color: white;
+  background: black;
+  border: none;
+  position: relative;
+  transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  box-shadow: 0 0 0.25em #333;
+  cursor: pointer;
+  outline: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Patrick Hand SC", cursive;
+}
+button:active {
+  -webkit-transform: scale(1.2, 0.8);
+  transform: scale(1.2, 0.8);
+}
 /* Prevent the text contents of draggable elements from being selectable. */
 [draggable] {
   -moz-user-select: none;
