@@ -26,6 +26,7 @@ body {
 }
 #box-cover iframe {
   height: 100% !important;
+  background-color: #3d3d3e;
 }
 
 #piece-answer-swapper {
