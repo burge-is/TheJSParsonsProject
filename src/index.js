@@ -31,7 +31,7 @@ function startApp() {
 function loadPenPieces() {
   //Clear existing changes
   document
-    .querySelectorAll(".editor-zone")
+    .querySelectorAll(".editor-input")
     .forEach(zone => (zone.innerHTML = ""));
   document.getElementById("piece-holder").innerHTML = "";
   // Notify user of loading
