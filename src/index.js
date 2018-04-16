@@ -124,8 +124,7 @@ function dragAndDrop() {
       }
       if (dragSrcEl != this) {
         // Set the source column's HTML to the HTML of the column we dropped on.
-        dragSrcEl.innerHTML = this.innerHTML;
-        this.innerHTML = e.dataTransfer.getData("text/html");
+        this.parentNode.insertBefore(dragSrcEl, this);
         updateResultsFrame();
       }
     },
