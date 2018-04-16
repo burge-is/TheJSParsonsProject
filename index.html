@@ -8,7 +8,7 @@
 	<title>The JS Parsons Project</title>
 	<link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
-	<script src="src/index.js"></script>
+	<script defer src="src/index.js"></script>
 	<!-- // Touch drag/drop polyfill // from https://github.com/Bernardo-Castilho/dragdroptouch // THANK YOU, Bernardo Castilho! -->
 	<script src="src/DragDropTouch.js"></script>
 </head>
@@ -32,15 +32,15 @@
 	<form id="editor-form">
 		<div>
 			<label for="html">html</label>
-			<div class="editor-input cardboard popout dropZone" name="html" id="html-editor" draggable="true"></div>
+			<div class="editor-input cardboard popout dropZone" name="html" id="html-editor"></div>
 		</div>
 		<div>
 			<label for="css">css</label>
-			<div class="editor-input cardboard popout dropZone" name="css" id="css-editor" draggable="true"></div>
+			<div class="editor-input cardboard popout dropZone" name="css" id="css-editor"></div>
 		</div>
 		<div>
 			<label for="js">js</label>
-			<div disabled class="editor-input cardboard popout dropZone" name="js" id="js-editor" draggable="true"></div>
+			<div disabled class="editor-input cardboard popout dropZone" name="js" id="js-editor"></div>
 	</div>
 	</form>
 	<div id="output-container">

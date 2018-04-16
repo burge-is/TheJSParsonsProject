@@ -76,7 +76,7 @@ function loadPenPieces() {
 *  Create a draggable HTMLElement out of text
 */
 function buildDraggable(text) {
-  let draggable = document.createElement("pre");
+  let draggable = document.createElement("div");
   draggable.draggable = true;
   draggable.innerText = text;
   draggable.className = "puzzle-piece";
