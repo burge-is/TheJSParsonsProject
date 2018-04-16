@@ -86,8 +86,7 @@ body {
   flex-direction: column;
 }
 #editor-form .editor-input .puzzle-piece {
-  margin: 0px;
-  margin-right: auto;
+  margin: -1px auto -1px 0px;
 }
 
 .cardboard {
