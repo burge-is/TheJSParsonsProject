@@ -110,7 +110,7 @@ body {
   position: relative;
 }
 #output-container iframe {
-  background-color: white;
+  background-color: #3d3d3e;
   min-height: 400px;
   min-width: 100%;
   max-width: 100%;

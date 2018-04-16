@@ -74,7 +74,7 @@ function loadPenPieces() {
       // If so cap the height at 800 to prevent
       // a pen you have to scroll to see
       "/?height=" +
-      (pieceHolderSize < 800 ? pieceHolderSize - 5 : 800) +
+      (pieceHolderSize < 800 ? pieceHolderSize - 15 : 800) +
       "&default-tab=result";
   });
 }
