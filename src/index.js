@@ -29,6 +29,16 @@ function startApp() {
 * from codepen and convert them into puzzle pieces
 */
 function loadPenPieces() {
+  //Clear existing changes
+  document
+    .querySelectorAll(".editor-zone")
+    .forEach(zone => (zone.innerHTML = ""));
+  document.getElementById("piece-holder").innerHTML = "";
+  // Notify user of loading
+  const loading = buildDraggable("loading...");
+  document.getElementById("piece-holder").appendChild(loading);
+
+  // Get codepen css,js, and html
   const codepenURL =
     document.querySelector("#codepen-url").value ||
     "https://codepen.io/andcircus/pen/aYgxOy";
@@ -36,13 +46,8 @@ function loadPenPieces() {
   const css = get(codepenURL + ".css");
   const js = get(codepenURL + ".js");
 
-  document.getElementById("piece-holder").innerHTML = "";
-  document
-    .getElementById("piece-holder")
-    .appendChild(buildDraggable("loading..."));
-
   Promise.all([html, css, js]).then(function(responses) {
-    document.getElementById("piece-holder").innerHTML = "";
+    loading.remove();
     shuffle(
       responses
         // Flatten the js, html, and css into a single array
