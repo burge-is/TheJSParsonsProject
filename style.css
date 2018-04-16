@@ -45,6 +45,7 @@ body {
 }
 #codepen-load-form {
   font-size: 24px;
+  margin-bottom: 24px;
 }
 #codepen-load-form * {
   display: inline;
