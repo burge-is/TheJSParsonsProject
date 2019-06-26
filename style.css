@@ -14,6 +14,9 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/cardboard.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
+h1 {
+  margin-bottom: 5px;
+}
 #box-cover {
   position: absolute;
   top: 0;
@@ -46,7 +49,7 @@ body {
 }
 #codepen-load-form {
   font-size: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 #codepen-load-form * {
   display: inline;
@@ -115,8 +118,7 @@ body {
   min-height: 400px;
   min-width: 100%;
   max-width: 100%;
-  border-radius: 30px;
-  padding: 40px;
+  padding: 5px;
 }
 
 .tv {
